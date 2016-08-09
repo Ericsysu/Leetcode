@@ -1,12 +1,13 @@
 #include<iostream>
 #include<cstdio>
+#include<stdio.h>
 #include<string>
 #include<vector>
 #include<map>
 #include<algorithm>
 #include<cstdlib>
 #include<cstring>
-#include<math.h>
+#include<cmath>
 #include <tr1/unordered_map>
 #include<stack>
 
@@ -750,13 +751,13 @@ bool isPowerOfTwo(int n){//leetcode 231
     return true;
 }
 
-//bool isPowerOfThree(int n){
-//    double x = log10(n)/log10(3);
-//    const double eps = 1e-6;
-//    if(abs(x-floor(x))<eps)
-//        return true;
-//    return false;
-//}
+bool isPowerOfThree(int n){
+    double x = log10(n)/log10(3);
+    const double eps = 1e-6;
+    if(abs(x-floor(x))<eps)
+        return true;
+    return false;
+}
 
 int maxProduct(vector<string>& words) {//leetcode 318 O(n*n)
     int maxn = 0;
@@ -774,15 +775,6 @@ int maxProduct(vector<string>& words) {//leetcode 318 O(n*n)
     }
     delete[] bit;
     return maxn;
-}
-
-class A{
-public:
-    static int st;
-};
-
-int totalNQueens(int n){
-
 }
 
 int a;
