@@ -1,26 +1,19 @@
-#include<iostream>
-#include<cstdio>
-#include<stdio.h>
-#include<string>
-#include<vector>
-#include<map>
-#include<algorithm>
-#include<cstdlib>
-#include<cstring>
-#include<cmath>
+#include <iostream>
+#include <cstdio>
+#include <stdio.h>
+#include <string>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <cstdlib>
+#include <cstring>
+#include <cmath>
 #include <tr1/unordered_map>
-#include<stack>
+#include <stack>
 
 using namespace std;
 using namespace tr1;
 
-string reverseString(string s){//leetcode 344
-    string res="";
-    for(int i=s.size()-1;i>=0;i--){
-        res+=s[i];
-    }
-    return res;
-}
 vector<int> countBits(int num){//leetcode 338
     int count=0;
     vector<int> res;
@@ -36,15 +29,6 @@ vector<int> countBits(int num){//leetcode 338
         count=0;
     }
     return res;
-}
-
-bool canWinNim(int n){//leetcode 292
-    return n % 4 != 0;
-}
-
-int getSum(int a, int b){//leetcode 371
-    if(a==0) return b;
-    return getSum((a&b)<<1,a^b);
 }
 
 int singleNumber1(vector<int>& nums){//leetcode 136
