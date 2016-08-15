@@ -14,61 +14,12 @@
 using namespace std;
 using namespace tr1;
 
-vector<int> countBits(int num){//leetcode 338
-    int count=0;
-    vector<int> res;
-    res.push_back(0);
-    for(int i=1;i<=num;i++){
-        int tmp = i;
-        while(tmp>0){
-            count++;
-            tmp&=(tmp-1);
-        }
-        //cout<<count<<endl;
-        res.push_back(count);
-        count=0;
-    }
-    return res;
-}
-
-int singleNumber1(vector<int>& nums){//leetcode 136
-    int res = nums[0];
-    for(int i=1;i<nums.size();i++){
-        res^=nums[i];
-    }
-    return res;
-}
-
-int addDigits(int num){//leetcode 158
-    int res = num;
-    while(res>=10){
-        num = res;
-        res = 0;
-        while(num>0){
-            res+=num%10;
-            //cout<<res<<endl;
-            num=(num-num%10)/10;
-        }
-    }
-    return res;
-}
-
 struct TreeNode{//Binary Tree Definition
     int val;
     TreeNode *left;
     TreeNode *right;
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
-
-int maxDepth(TreeNode* root){//leetcode 104
-    int depth = 0;
-    if(root){
-        int leftdepth = maxDepth(root->left);
-        int rightdepth = maxDepth(root->right);
-        depth = leftdepth>=rightdepth?leftdepth+1:rightdepth+1;
-    }
-    return depth;
-}
 
 TreeNode* invertTree(TreeNode* root){//leetcode 226
     TreeNode* tmp;

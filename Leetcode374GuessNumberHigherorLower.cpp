@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <cstdlib>
 #include <cstring>
+#include <sstream>
 #include <cmath>
 #include <tr1/unordered_map>
 #include <tr1/unordered_set>
@@ -17,25 +18,20 @@
 using namespace std;
 using namespace tr1;
 
+int guess(int num);
+
 class Solution {
 public:
-    bool isPalindrome(int x) {
-        string s;
-        stringstream ss;
-        ss<<x;
-        s = ss.str();
-        for(int i = 0, j = s.size()-1; i!=s.size()/2; i++, j--){
-            if(s[i]!=s[j]) return false;
+    int guessNumber(int n) {
+        long long left = 1;
+        long long right = n;
+        long long res = 0;
+        while(left<=right){
+            res = (left+right)/2;
+            if(guess(res) == -1) right = res-1;
+            else if(guess(res) == 1) left = res+1;
+            else break;
         }
-        return true;
+        return (int)res;
     }
 };
-
-bool isPalindrome(int x){
-    int n = 0;
-    while(x>0){
-        n = x % 10 + n * 10;
-        x /= 10;
-    }
-    return n == x;
-}
