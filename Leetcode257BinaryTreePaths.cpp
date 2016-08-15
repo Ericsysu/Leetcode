@@ -45,3 +45,47 @@ public:
         return res;
     }
 };
+
+//better solution
+vector<string> binaryTreePaths(TreeNode* root) {
+    vector<string> res;
+
+    if(!root) return res;
+    else if(!root->left && !root->right) res.push_back(to_string(root->val));
+
+    string head = to_string(root->val) + "->";
+
+    for(auto item: binaryTreePaths(root->left)) res.push_back(head + item);
+    for(auto item: binaryTreePaths(root->right)) res.push_back(head + item);
+
+    return res;
+}
+
+//recursive Solution
+vector<int> binaryTreePathsr(TreeNode* root){
+    vector<string> res;
+    if(!root) return res;
+    stack<TreeNode*> nodes;
+    stack<string> str;
+    nodes.push(root);
+    str.push("");
+
+    while(!nodes.empty()){
+        TreeNode* top = nodes.top();
+        string cs = str.top();
+        if(!top->left && !top->right){
+            cs += to_string(top->val);
+            res.push_back(cs);
+        }else{
+            if(top->right){
+                nodes.push(top->right);
+                str.push(cs + to_string(top->val) + "->");
+            }
+            if(top->left){
+                nodes.push(top->left);
+                str.push(cs + to_string(top->val) + "->");
+            }
+        }
+    }
+    return res;
+}
