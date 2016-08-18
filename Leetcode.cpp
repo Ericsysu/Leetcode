@@ -671,7 +671,6 @@ ListNode* reverseList(ListNode* head){//leetcode 206
         //if(prev) cout<<prev->val<<"III"<<' ';
         node = next;
         //if(node) cout<<node->val<<"IV"<<' ';
-        cout<<"One Round"<<endl;
      }
      return prev;
 }
