@@ -273,13 +273,9 @@ ListNode* reverseList(ListNode* head){//leetcode 206
 
      while(node){
         ListNode* next = node->next;
-        //if(next) cout<<next->val<<"I"<<' ';
         node->next = prev;
-        //if(node->next) cout<<node->next->val<<"II"<<' ';
         prev = node;
-        //if(prev) cout<<prev->val<<"III"<<' ';
         node = next;
-        //if(node) cout<<node->val<<"IV"<<' ';
      }
      return prev;
 }
