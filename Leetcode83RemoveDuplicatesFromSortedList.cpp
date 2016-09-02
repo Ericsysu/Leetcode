@@ -1,16 +1,16 @@
-#include<iostream>
-#include<cstdio>
-#include<stdio.h>
-#include<string>
-#include<vector>
-#include<map>
-#include<algorithm>
-#include<cstdlib>
-#include<cstring>
-#include<cmath>
+#include <iostream>
+#include <cstdio>
+#include <stdio.h>
+#include <string>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <cstdlib>
+#include <cstring>
+#include <cmath>
 #include <tr1/unordered_map>
 #include <tr1/unordered_set>
-#include<stack>
+#include <stack>
 
 using namespace std;
 using namespace tr1;

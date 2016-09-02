@@ -16,11 +16,11 @@ using namespace tr1;
 
 vector<int> twoSum(vector<int>& nums, int target){//leetcode 1
     int tmp1 = 0,tmp2 = 0;
-    bool found=false;
-    for(int i=0;i<nums.size()-1;i++){
-        if((target>0&&nums[i]>target) || (target<0&&nums[i]<target)) continue;
+    bool found = false;
+    for(int i=0; i<nums.size()-1; i++){
+        if((target > 0 && nums[i] > target) || (target < 0 && nums[i] < target)) continue;
         tmp1 = i;
-        for(int j=i+1;j<nums.size();j++){
+        for(int j=i+1; j<nums.size(); j++){
             if(nums[j]+nums[i]!=target) continue;
             else{
                 tmp2 = j;

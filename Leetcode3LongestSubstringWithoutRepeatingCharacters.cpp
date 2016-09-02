@@ -29,7 +29,6 @@ int lengthOfLongestSubstring(string s){//leetcode 3 bad way
     for(int i=0;i<l;i++){
         dp[i][i] = true;
     }
-    cout<< l << ' ';
     for(int i=0;i<l-1;i++){
         for(int j=i+1;j<l;j++){
             if(dp[i][j-1]&&!find(i,j-1,s[j],s)){
