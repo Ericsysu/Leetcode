@@ -76,8 +76,8 @@ int main()
     for(k=0;k<len;k++)
         cout<<array[k]<<",";
     cout<<endl;
-    selectionSort(array, len);
-    //quicksort(array,0,len-1);
+    //selectionSort(array, len);
+    quickSort(array,0,len-1);
     cout<<"The sorted arrayare:"<<endl;
     for(k=0;k<len;k++)
         cout<<array[k]<<",";
